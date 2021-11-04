@@ -217,7 +217,7 @@ public extension IRCCommand {
         self = .NOTICE(targets, arguments[1])
       
       case "CAP":
-        try expect(min: 1, max: 2)
+        try expect(min: 1)
         guard let subcmd = CAPSubCommand(rawValue: arguments[0]) else {
           throw IRCParserError.invalidCAPCommand(arguments[0])
         }
